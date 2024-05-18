@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_heading1">47.78sp</dimen>
+    <dimen name="font_heading2">39.81sp</dimen>
+    <dimen name="font_heading3">33.18sp</dimen>
+    <dimen name="font_heading4">27.65sp</dimen>
+    <dimen name="font_heading5">23.04sp</dimen>
+    <dimen name="font_heading6">19.2sp</dimen>
+    <dimen name="font_paragraph">16sp</dimen>
+    <dimen name="font_small">13.33sp</dimen>
+    <dimen name="font_extrasmall">11.11sp</dimen>
+
+    <dimen name="margin_auth">24dp</dimen>
+    <dimen name="margin_default">20dp</dimen>
+</resources>

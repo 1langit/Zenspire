@@ -1,0 +1,118 @@
+<resources>
+    <!-- Base application theme -->
+    <style name="Base.Theme.Zenspire" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_blue_700</item>
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:windowBackground">@color/primary_blue_25</item>
+    </style>
+    <style name="Theme.Zenspire" parent="Base.Theme.Zenspire" />
+
+    <!-- Shape -->
+    <style name="CircularShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Fonts -->
+    <style name="font_heading1_bold">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/font_heading1</item>
+    </style>
+
+    <style name="font_heading2_bold">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/font_heading2</item>
+    </style>
+    <style name="font_heading2_semibold">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">@dimen/font_heading2</item>
+    </style>
+    <style name="font_heading2_regular">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:textSize">@dimen/font_heading2</item>
+    </style>
+
+    <style name="font_heading3_bold">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/font_heading3</item>
+    </style>
+    <style name="font_heading3_semibold">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">@dimen/font_heading3</item>
+    </style>
+    <style name="font_heading3_regular">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:textSize">@dimen/font_heading3</item>
+    </style>
+
+    <style name="font_heading4_bold">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/font_heading4</item>
+    </style>
+    <style name="font_heading4_semibold">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">@dimen/font_heading4</item>
+    </style>
+    <style name="font_heading4_medium">
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/font_heading4</item>
+    </style>
+
+    <style name="font_heading5_semibold">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">@dimen/font_heading5</item>
+    </style>
+
+    <style name="font_heading6_medium">
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/font_heading6</item>
+    </style>
+    <style name="font_heading6_semibold">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">@dimen/font_heading6</item>
+    </style>
+    <style name="font_heading6_bold">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/font_heading6</item>
+    </style>
+
+    <style name="font_paragraph_regular">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:textSize">@dimen/font_paragraph</item>
+    </style>
+    <style name="font_paragraph_medium">
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/font_paragraph</item>
+    </style>
+    <style name="font_paragraph_semibold">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">@dimen/font_paragraph</item>
+    </style>
+
+    <style name="font_small_regular">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+    <style name="font_small_medium">
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+    <style name="font_small_semibold">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="font_extrasmall_regular">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:textSize">@dimen/font_extrasmall</item>
+    </style>
+    <style name="font_extrasmall_medium">
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/font_extrasmall</item>
+    </style>
+    <style name="font_extrasmall_semibold">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">@dimen/font_extrasmall</item>
+    </style>
+
+</resources>

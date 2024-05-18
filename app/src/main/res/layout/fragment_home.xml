@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_blue_50"
+    tools:context=".dashboard.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_greeting"
+            style="@style/font_paragraph_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/margin_default"
+            android:text="Halo,"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_name"
+            style="@style/font_heading5_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="@dimen/margin_default"
+            android:text="Zenia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_badge"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:layout_marginTop="16dp"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:minHeight="0dp"
+            android:text="1000xp"
+            android:textSize="@dimen/font_extrasmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="-1dp"
+            android:translationY="24dp"
+            android:rotation="180"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_circle"
+            app:layout_constraintBottom_toTopOf="@+id/card_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/primary_blue_25" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_mood"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="@dimen/margin_default"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_mood"
+                    style="@style/font_paragraph_semibold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bagaimana perasaanmu hari ini?"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_mood_excellent"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="4dp"
+                    android:drawableTop="@drawable/ic_mood_sangat_baik"
+                    android:paddingHorizontal="0dp"
+                    android:textColor="@color/primary_blue_600"
+                    android:textStyle="bold"
+                    android:text="Sangat\nBaik"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/primary_blue_600"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_mood_good"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_mood_good"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="4dp"
+                    android:drawableTop="@drawable/ic_mood_baik"
+                    android:paddingHorizontal="0dp"
+                    android:textColor="@color/primary_green_1"
+                    android:textStyle="bold"
+                    android:text="Baik\n"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/primary_green_1"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_mood_normal"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_mood_excellent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_mood_normal"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="4dp"
+                    android:drawableTop="@drawable/ic_mood_biasa"
+                    android:paddingHorizontal="0dp"
+                    android:textColor="@color/secondary_green_700"
+                    android:textStyle="bold"
+                    android:text="Biasa\n"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/secondary_green_700"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_mood_bad"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_mood_good"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_mood_bad"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="4dp"
+                    android:drawableTop="@drawable/ic_mood_buruk"
+                    android:paddingHorizontal="0dp"
+                    android:textColor="@color/secondary_yellow_400"
+                    android:textStyle="bold"
+                    android:text="Buruk\n"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/secondary_yellow_400"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_mood_worse"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_mood_normal"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_mood_worse"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:drawableTop="@drawable/ic_mood_sangat_buruk"
+                    android:paddingHorizontal="0dp"
+                    android:textColor="@color/secondary_red_400"
+                    android:textStyle="bold"
+                    android:text="Sangat\nBuruk"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/secondary_red_400"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_mood_bad"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_content"
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/card_mood">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_default">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_chatbot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:drawableTop="@drawable/ic_chatbot"
+                    android:paddingHorizontal="0dp"
+                    android:paddingVertical="16dp"
+                    android:text="Chatbot\nZenia"
+                    android:textColor="@color/secondary_yellow_700"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/secondary_yellow_100"
+                    app:cornerRadius="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_chat_psych"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/click" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_chat_psych"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:drawableTop="@drawable/ic_phone_chat"
+                    android:paddingHorizontal="0dp"
+                    android:paddingVertical="16dp"
+                    android:text="Chat\nPsikolog"
+                    android:textColor="@color/secondary_red_600"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/secondary_red_100"
+                    app:cornerRadius="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_article"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_chatbot"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/click" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_article"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:drawableTop="@drawable/ic_article"
+                    android:paddingHorizontal="0dp"
+                    android:paddingVertical="16dp"
+                    android:text="Artikel\nBlog"
+                    android:textColor="@color/primary_blue_700"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/primary_blue_50"
+                    app:cornerRadius="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_test"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_chat_psych"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/click" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_test"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_questionaire"
+                    android:paddingHorizontal="0dp"
+                    android:paddingVertical="16dp"
+                    android:text="Cek\nStress"
+                    android:textColor="@color/primary_green_1"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/primary_green_7"
+                    app:cornerRadius="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_article"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/click" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_community"
+                    style="@style/font_heading6_semibold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Populer di Komunitas"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_chatbot" />
+
+                <include
+                    android:id="@+id/community_top"
+                    layout="@layout/rv_item_community"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_community" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_other_post"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="Lihat unggahan populer lainnya"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/community_top" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_article"
+                    style="@style/font_heading6_semibold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Artikel Terbaru"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_other_post" />
+
+                <include
+                    android:id="@+id/article_top"
+                    layout="@layout/rv_item_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_article" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_other_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="Lihat artikel terbaru lainnya"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/article_top" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

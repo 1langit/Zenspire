@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="click">#11000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="white_black_50">#FFEBEBEB</color>
+    <color name="white_black_100">#FFD7D7D7</color>
+    <color name="white_black_200">#FFC3C3C3</color>
+    <color name="white_black_300">#FFAFAFAF</color>
+    <color name="white_black_400">#FF9B9B9B</color>
+    <color name="white_black_500">#FF878787</color>
+    <color name="white_black_600">#FF737373</color>
+    <color name="white_black_700">#FF5F5F5F</color>
+    <color name="white_black_800">#FF4B4B4B</color>
+    <color name="white_black_900">#FF373737</color>
+
+    <color name="primary_green_1">#FF2B9EA1</color>
+    <color name="primary_green_2">#FF32B6B9</color>
+    <color name="primary_green_3">#FF4CC4C7</color>
+    <color name="primary_green_4">#FF66D2D5</color>
+    <color name="primary_green_5">#FF80E0E3</color>
+    <color name="primary_green_6">#FF9AEEF1</color>
+    <color name="primary_green_7">#FFB3FEFF</color>
+
+    <color name="primary_blue_700">#FF12719C</color>
+    <color name="primary_blue_600">#FF2990BC</color>
+    <color name="primary_blue_500">#FF3EA1C9</color>
+    <color name="primary_blue_400">#FF53B2D6</color>
+    <color name="primary_blue_300">#FF68C3E3</color>
+    <color name="primary_blue_200">#FF7DD4F0</color>
+    <color name="primary_blue_100">#FF94E6FF</color>
+    <color name="primary_blue_50">#FFCFF4FF</color>
+    <color name="primary_blue_25">#FFEBFAFF</color>
+
+    <color name="primary_navy_700">#FF2C3F54</color>
+    <color name="primary_navy_600">#FF31465D</color>
+    <color name="primary_navy_500">#FF364D66</color>
+    <color name="primary_navy_400">#FF3B546F</color>
+    <color name="primary_navy_300">#FF405B78</color>
+    <color name="primary_navy_200">#FF456281</color>
+    <color name="primary_navy_100">#FF4C6B8A</color>
+
+    <color name="secondary_green_700">#FF1AAD90</color>
+    <color name="secondary_green_600">#FF1BBB9C</color>
+    <color name="secondary_green_500">#FF36CBAC</color>
+    <color name="secondary_green_400">#FF43D3B4</color>
+    <color name="secondary_green_300">#FF50DBBC</color>
+    <color name="secondary_green_200">#FF5DE3C4</color>
+    <color name="secondary_green_100">#FF86EFD6</color>
+
+    <color name="secondary_yellow_700">#FFF99601</color>
+    <color name="secondary_yellow_600">#FFFAA221</color>
+    <color name="secondary_yellow_500">#FFFBAE41</color>
+    <color name="secondary_yellow_400">#FFFCBA61</color>
+    <color name="secondary_yellow_300">#FFFDC681</color>
+    <color name="secondary_yellow_200">#FFFED2A1</color>
+    <color name="secondary_yellow_100">#FFFFF1E1</color>
+
+    <color name="secondary_red_700">#FFF8494C</color>
+    <color name="secondary_red_600">#FFF9595E</color>
+    <color name="secondary_red_500">#FFFA6970</color>
+    <color name="secondary_red_400">#FFFB7982</color>
+    <color name="secondary_red_300">#FFFC8994</color>
+    <color name="secondary_red_200">#FFFD99A6</color>
+    <color name="secondary_red_100">#FFFEE1E5</color>
+</resources>
