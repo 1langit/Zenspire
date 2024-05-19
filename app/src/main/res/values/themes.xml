@@ -4,6 +4,7 @@
         <item name="colorPrimary">@color/primary_blue_700</item>
         <item name="fontFamily">@font/montserrat</item>
         <item name="android:windowBackground">@color/primary_blue_25</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
     <style name="Theme.Zenspire" parent="Base.Theme.Zenspire" />
 
