@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.genzen.zenspire.dashboard.HomeFragment"
+        android:name="com.genzen.zenspire.ui.dashboard.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/journalFragment"
-        android:name="com.genzen.zenspire.dashboard.JournalFragment"
+        android:name="com.genzen.zenspire.ui.dashboard.JournalFragment"
         android:label="fragment_journal"
         tools:layout="@layout/fragment_journal" />
     <fragment
         android:id="@+id/communityFragment"
-        android:name="com.genzen.zenspire.dashboard.CommunityFragment"
+        android:name="com.genzen.zenspire.ui.dashboard.CommunityFragment"
         android:label="fragment_community"
         tools:layout="@layout/fragment_community" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.genzen.zenspire.dashboard.ProfileFragment"
+        android:name="com.genzen.zenspire.ui.dashboard.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

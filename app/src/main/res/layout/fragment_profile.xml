@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dashboard.ProfileFragment"
+    tools:context=".ui.dashboard.ProfileFragment"
     android:gravity="center">
 
     <com.google.android.material.button.MaterialButton
