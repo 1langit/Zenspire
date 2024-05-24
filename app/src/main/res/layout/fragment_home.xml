@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginStart="@dimen/margin_default"
+            android:textColor="@color/primary_blue_700"
             android:text="Halo,"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:layout_marginStart="@dimen/margin_default"
+            android:textColor="@color/primary_blue_700"
             android:text="Zenia"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -61,128 +63,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:tint="@color/primary_blue_25" />
 
-        <com.google.android.material.card.MaterialCardView
+        <include
             android:id="@+id/card_mood"
-            style="@style/Widget.Material3.CardView.Elevated"
-            android:layout_width="match_parent"
+            layout="@layout/component_mood_picker"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
             android:layout_marginHorizontal="@dimen/margin_default"
-            app:cardBackgroundColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@+id/txt_name">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="12dp"
-                android:paddingHorizontal="16dp">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/txt_mood"
-                    style="@style/font_paragraph_semibold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bagaimana perasaanmu hari ini?"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_mood_excellent"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginTop="4dp"
-                    android:drawableTop="@drawable/ic_mood_sangat_baik"
-                    android:paddingHorizontal="0dp"
-                    android:textColor="@color/primary_blue_600"
-                    android:textStyle="bold"
-                    android:text="Sangat\nBaik"
-                    app:cornerRadius="12dp"
-                    app:strokeColor="@color/primary_blue_600"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_mood_good"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_mood_good"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginTop="4dp"
-                    android:drawableTop="@drawable/ic_mood_baik"
-                    android:paddingHorizontal="0dp"
-                    android:textColor="@color/primary_green_1"
-                    android:textStyle="bold"
-                    android:text="Baik\n"
-                    app:cornerRadius="12dp"
-                    app:strokeColor="@color/primary_green_1"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_mood_normal"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btn_mood_excellent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_mood_normal"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginTop="4dp"
-                    android:drawableTop="@drawable/ic_mood_biasa"
-                    android:paddingHorizontal="0dp"
-                    android:textColor="@color/secondary_green_700"
-                    android:textStyle="bold"
-                    android:text="Biasa\n"
-                    app:cornerRadius="12dp"
-                    app:strokeColor="@color/secondary_green_700"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_mood_bad"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btn_mood_good"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_mood_bad"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginTop="4dp"
-                    android:drawableTop="@drawable/ic_mood_buruk"
-                    android:paddingHorizontal="0dp"
-                    android:textColor="@color/secondary_yellow_400"
-                    android:textStyle="bold"
-                    android:text="Buruk\n"
-                    app:cornerRadius="12dp"
-                    app:strokeColor="@color/secondary_yellow_400"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_mood_worse"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btn_mood_normal"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_mood_worse"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:drawableTop="@drawable/ic_mood_sangat_buruk"
-                    android:paddingHorizontal="0dp"
-                    android:textColor="@color/secondary_red_400"
-                    android:textStyle="bold"
-                    android:text="Sangat\nBuruk"
-                    app:cornerRadius="12dp"
-                    app:strokeColor="@color/secondary_red_400"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btn_mood_bad"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_content"
@@ -286,7 +176,7 @@
 
                 <include
                     android:id="@+id/community_top"
-                    layout="@layout/rv_item_community"
+                    layout="@layout/component_community"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -316,7 +206,7 @@
 
                 <include
                     android:id="@+id/article_top"
-                    layout="@layout/rv_item_article"
+                    layout="@layout/component_article"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"

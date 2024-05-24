@@ -16,6 +16,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.journal.JournalDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.journal.JournalAddActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.questionnaire.QuestionnaireResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.questionnaire.QuestionnaireActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.questionnaire.QuestionnaireSplashActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.dashboard.UserDataActivity"
             android:exported="false" />
         <activity

@@ -9,11 +9,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.genzen.zenspire.data.api.ApiClient
-import com.genzen.zenspire.data.PrefManager
 import com.genzen.zenspire.R
+import com.genzen.zenspire.data.PrefManager
+import com.genzen.zenspire.data.api.ApiClient
 import com.genzen.zenspire.data.models.dashboard.UserDataRequest
-import com.genzen.zenspire.databinding.ActivityPersonalDataBinding
+import com.genzen.zenspire.databinding.ActivityUserDataBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,13 +24,13 @@ import java.util.Locale
 
 class UserDataActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityPersonalDataBinding
+    private lateinit var binding: ActivityUserDataBinding
     private lateinit var datePicker: MaterialDatePicker<Long>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityPersonalDataBinding.inflate(layoutInflater)
+        binding = ActivityUserDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
