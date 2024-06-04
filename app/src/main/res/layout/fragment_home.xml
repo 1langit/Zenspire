@@ -35,19 +35,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_badge"
-            android:layout_marginEnd="@dimen/margin_default"
-            android:layout_marginTop="16dp"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="6dp"
-            android:minHeight="0dp"
-            android:text="1000xp"
-            android:textSize="@dimen/font_extrasmall"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawableLeft="@drawable/ic_badge"-->
+<!--            android:layout_marginEnd="@dimen/margin_default"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:paddingHorizontal="12dp"-->
+<!--            android:paddingVertical="6dp"-->
+<!--            android:minHeight="0dp"-->
+<!--            android:text="1000xp"-->
+<!--            android:textSize="@dimen/font_extrasmall"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/img_bg"

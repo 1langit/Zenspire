@@ -9,15 +9,15 @@
     <item
         android:id="@+id/journalFragment"
         android:icon="@drawable/ic_journal"
-        android:title="Journal" />
+        android:title="Jurnal" />
 
     <item
         android:id="@+id/communityFragment"
         android:icon="@drawable/ic_community"
-        android:title="Community" />
+        android:title="Komunitas" />
 
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_profile"
-        android:title="Profile" />
+        android:title="Profil" />
 </menu>

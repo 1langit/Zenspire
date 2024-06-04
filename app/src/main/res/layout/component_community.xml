@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
     android:clickable="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,12 +47,24 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_option"
-            style="@style/Widget.Material3.FloatingActionButton.Surface"
+            style="@style/Widget.Material3.Button.IconButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_option"
+            app:icon="@drawable/ic_option"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_sample"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_profile" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_title"
@@ -62,7 +75,7 @@
             android:text="Bagaimana cara keluar dari circle yang toxic?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_profile" />
+            app:layout_constraintTop_toBottomOf="@+id/img_post" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_content"

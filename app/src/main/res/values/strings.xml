@@ -1,17 +1,14 @@
 <resources>
     <string name="app_name">Zenspire</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="questionnaire_result_sample">Wah, kamu mengalami gejala depresi ringan. Kamu dianjurkan untuk melakukan terapi psikoedukasi bila ada perburukan gejala</string>
-    
+
     <string name="angst_scale_1">Minimal</string>
     <string name="angst_scale_2">Ringan</string>
     <string name="angst_scale_3">Sedang</string>
     <string name="angst_scale_4">Berat</string>
     <string name="angst_scale_5">Ekstrem</string>
-    
+
     <string name="scale_desc_1">Sedikit kekhawatiran/kecemasan. Mampu menyelesaikan satu hal dan fokus pada tugas. Sedikit atau tanpa gejala fisik</string>
     <string name="scale_desc_2">Cemas tapi tidak seharian. Beberapa perubahan konsentrasi &amp; mungkin tidur. Sakit perut &amp; ketegangan otot</string>
     <string name="scale_desc_3">Cemas hampir sepanjang hari. Perubahan konsentrasi, nafsu makan, dan tidur. Menghindari. Merasa panik. Sakit kepala &amp; kelelahan</string>
@@ -25,4 +22,14 @@
     <string name="rafael">Rafael Rafael Rafael Rafael Rafael Rafael Rafael Rafael</string>
 
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse imperdiet velit sed imperdiet aliquam. Vivamus eu mi quis lectus tincidunt hendrerit. Nullam lacinia posuere ante, id porttitor nulla vulputate ut. Pellentesque magna elit, scelerisque at ex vitae, pulvinar feugiat libero. Nam semper aliquet turpis quis aliquam. Mauris dignissim accumsan luctus. Donec in lorem arcu. Nullam et metus in nulla malesuada ultricies varius sit amet eros. Donec id sodales nunc. Vivamus at volutpat nisl, id sodales ex.</string>
+
+    <string-array name="community_post_category">
+        <item>Pengalaman</item>
+        <item>Tantangan Keseharian</item>
+        <item>Terapi dan Perawatan</item>
+        <item>Motivasi dan Nasehat</item>
+        <item>Edukasi</item>
+        <item>Acara dan Aktivitas</item>
+        <item>Tips dan Strategi</item>
+    </string-array>
 </resources>
