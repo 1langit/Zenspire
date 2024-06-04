@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.genzen.zenspire.data.PrefManager
 import com.genzen.zenspire.databinding.FragmentHomeBinding
+import com.genzen.zenspire.ui.article.ArticleActivity
 import com.genzen.zenspire.ui.questionnaire.QuestionnaireSplashActivity
 
 class HomeFragment : Fragment() {
@@ -29,6 +30,11 @@ class HomeFragment : Fragment() {
 
         with(binding) {
             txtName.text = prefManager.getFirstName()
+
+            btnArticle.setOnClickListener {
+                val newIntent = Intent(requireContext(), ArticleActivity::class.java)
+                startActivity(newIntent)
+            }
 
             btnTest.setOnClickListener {
                 val newIntent = Intent(requireContext(), QuestionnaireSplashActivity::class.java)
