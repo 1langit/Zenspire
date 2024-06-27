@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "17314373856",
+    "project_id": "zenspire-f5ec6",
+    "storage_bucket": "zenspire-f5ec6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17314373856:android:a6ff2f34dc008c2acbb085",
+        "android_client_info": {
+          "package_name": "com.genzen.zenspire"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjxDJ3GQDdAzuVMyV4VkQEZhHI9qPENG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

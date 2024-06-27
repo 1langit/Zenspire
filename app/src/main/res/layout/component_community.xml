@@ -36,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txt_date_time"
+            android:id="@+id/txt_timestamp"
             style="@style/font_extrasmall_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -89,6 +89,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_content" />
+
         <com.google.android.material.card.MaterialCardView
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
@@ -104,20 +111,22 @@
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
+            android:minHeight="0dp"
             android:clickable="false"
             android:drawableLeft="@drawable/ic_like"
             android:text="1,210 suka"
             android:textColor="@color/white_black_900"
-            app:rippleColor="@color/transparent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_content" />
+            app:layout_constraintTop_toBottomOf="@+id/chip_category"
+            app:rippleColor="@color/transparent" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_comment"
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minHeight="0dp"
             android:clickable="false"
             android:drawableLeft="@drawable/ic_comment"
             android:text="120 komentar"

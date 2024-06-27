@@ -5,56 +5,54 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import com.genzen.zenspire.R
+import com.genzen.zenspire.databinding.FragmentJournalStatisticBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [JournalStatisticFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class JournalStatisticFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentJournalStatisticBinding
+    private val journalViewModel: JournalViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_journal_statistic, container, false)
+        binding = FragmentJournalStatisticBinding.inflate(layoutInflater)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment JournalStatisticFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            JournalStatisticFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        with(binding) {
+            val moodBadges = listOf(badgeExcellent, badgeGood, badgeNormal, badgeBad, badgeWorse)
+            val progressBars = listOf(progressExcelent, progressGood, progressNormal, progressBad, progressWorse)
+
+            journalViewModel.journals.observe(viewLifecycleOwner) { journals ->
+                val points = listOf(
+                    journals.count { it.mood == getString(R.string.angst_scale_1) },
+                    journals.count { it.mood == getString(R.string.angst_scale_2) },
+                    journals.count { it.mood == getString(R.string.angst_scale_3) },
+                    journals.count { it.mood == getString(R.string.angst_scale_4) },
+                    journals.count { it.mood == getString(R.string.angst_scale_5) },
+                )
+
+                moodBadges.forEach {
+                    it.text = points[moodBadges.indexOf(it)].toString()
+                }
+
+                val totalPoints = points.sum()
+                progressBars.forEachIndexed { index, progressBar ->
+                    if (totalPoints > 0) {
+                        val percentage = (points[index] / totalPoints.toFloat()) * 100
+                        progressBar.progress = percentage.toInt()
+                    } else {
+                        progressBar.progress = 0
+                    }
                 }
             }
+        }
     }
 }

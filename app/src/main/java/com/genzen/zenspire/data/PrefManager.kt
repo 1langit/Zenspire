@@ -60,13 +60,13 @@ class PrefManager private constructor(context: Context) {
         return sharedPreferences.getInt(KEY_UID, 0)
     }
     fun getEmail(): String {
-        return sharedPreferences.getString(KEY_EMAIL, "") ?: ""
+        return sharedPreferences.getString(KEY_EMAIL, "zendaya@gmail.com") ?: ""
     }
     fun getFirstName(): String {
-        return sharedPreferences.getString(KEY_FIRSTNAME, "") ?: ""
+        return sharedPreferences.getString(KEY_FIRSTNAME, "Zendaya") ?: ""
     }
     fun getLastName(): String {
-        return sharedPreferences.getString(KEY_LASTNAME, "") ?: ""
+        return sharedPreferences.getString(KEY_LASTNAME, "Nia") ?: ""
     }
     fun getExp(): Int {
         return sharedPreferences.getInt(KEY_EXP, 0)

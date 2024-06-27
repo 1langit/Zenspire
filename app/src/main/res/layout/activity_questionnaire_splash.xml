@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             app:titleTextAppearance="@style/font_heading6_semibold"
-            app:navigationIcon="@drawable/ic_back"
+            app:navigationIcon="@drawable/ic_arrow_left"
             app:titleCentered="true"
             app:title="Tes Depresi" />
 

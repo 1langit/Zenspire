@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/end_chat"
+        android:icon="@drawable/ic_end_chat"
+        app:showAsAction="always"
+        android:title="Ahiri chat" />
+
+</menu>

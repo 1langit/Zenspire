@@ -31,7 +31,7 @@
             android:layout_marginTop="36dp"
             android:layout_marginStart="@dimen/margin_default"
             android:textColor="@color/primary_blue_700"
-            android:text="Zenia"
+            android:text="Zendaya"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -121,9 +121,28 @@
                     android:textStyle="bold"
                     app:backgroundTint="@color/secondary_red_100"
                     app:cornerRadius="12dp"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_article"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_clinic"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_chatbot"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/click" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_clinic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:drawableTop="@drawable/ic_map"
+                    android:paddingHorizontal="0dp"
+                    android:paddingVertical="16dp"
+                    android:text="Klinik\nterdekat"
+                    android:textColor="#4C6B8A"
+                    android:textStyle="bold"
+                    app:backgroundTint="#DEE5ED"
+                    app:cornerRadius="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_article"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_chat_psych"
                     app:layout_constraintTop_toTopOf="parent"
                     app:rippleColor="@color/click" />
 
@@ -131,7 +150,6 @@
                     android:id="@+id/btn_article"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:drawableTop="@drawable/ic_article"
                     android:paddingHorizontal="0dp"
                     android:paddingVertical="16dp"
@@ -140,27 +158,9 @@
                     android:textStyle="bold"
                     app:backgroundTint="@color/primary_blue_50"
                     app:cornerRadius="12dp"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_test"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btn_chat_psych"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:rippleColor="@color/click" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:drawableTop="@drawable/ic_questionaire"
-                    android:paddingHorizontal="0dp"
-                    android:paddingVertical="16dp"
-                    android:text="Cek\nStress"
-                    android:textColor="@color/primary_green_1"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/primary_green_7"
-                    app:cornerRadius="12dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btn_article"
+                    app:layout_constraintStart_toEndOf="@+id/btn_clinic"
                     app:layout_constraintTop_toTopOf="parent"
                     app:rippleColor="@color/click" />
 

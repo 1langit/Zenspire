@@ -22,17 +22,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            app:navigationIcon="@drawable/ic_back"
+            app:navigationIcon="@drawable/ic_arrow_left"
             app:title="Artikel Blog"
             app:titleCentered="true"
             app:titleTextAppearance="@style/font_heading6_semibold" />
 
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.search.SearchBar
-        android:id="@+id/searchBar"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_search"
         android:layout_width="0dp"
-        android:layout_height="44dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="20sp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_badge"
+        android:backgroundTint="@color/white_black_50"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
         android:hint="Ketik kata kunci..."
         app:layout_constraintEnd_toStartOf="@+id/btn_filter"
         app:layout_constraintHorizontal_bias="0.38"
@@ -51,11 +60,12 @@
         app:layout_constraintTop_toBottomOf="@+id/card_app_bar" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_article"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="12dp"
         tools:listitem="@layout/component_article"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

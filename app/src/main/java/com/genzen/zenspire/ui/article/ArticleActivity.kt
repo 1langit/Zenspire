@@ -1,10 +1,13 @@
 package com.genzen.zenspire.ui.article
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.genzen.zenspire.R
 import com.genzen.zenspire.databinding.ActivityArticleBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -12,6 +15,12 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 class ArticleActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityArticleBinding
+    private val articleViewModel: ArticleViewModel by viewModels()
+    private val articleAdapter = ArticleAdapter { article ->
+        val newIntent = Intent(this@ArticleActivity, ArticleReadActivity::class.java)
+        newIntent.putExtra("ARTICLE", article)
+        startActivity(newIntent)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +40,15 @@ class ArticleActivity : AppCompatActivity() {
 
             btnFilter.setOnClickListener {
                 showCategoryDialog()
+            }
+
+            rvArticle.apply {
+                layoutManager = LinearLayoutManager(this@ArticleActivity)
+                adapter = articleAdapter
+            }
+
+            articleViewModel.article.observe(this@ArticleActivity) { articles ->
+                articleAdapter.setArticles(articles)
             }
         }
     }

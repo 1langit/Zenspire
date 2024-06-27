@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="4dp"
@@ -28,20 +29,24 @@
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_name"
             style="@style/font_small_semibold"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:ellipsize="end"
             android:text="dr. Maritza Angel"
+            app:layout_constraintEnd_toStartOf="@+id/btn_option"
             app:layout_constraintStart_toEndOf="@+id/img_profile"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txt_date_time"
+            android:id="@+id/txt_clinic_timestamp"
             style="@style/font_extrasmall_regular"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:ellipsize="end"
             android:text="Psikolog di  GMC  •  2 Jam"
+            app:layout_constraintEnd_toStartOf="@+id/btn_option"
             app:layout_constraintStart_toEndOf="@+id/img_profile"
             app:layout_constraintTop_toBottomOf="@+id/txt_name" />
 
@@ -76,6 +81,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_content" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

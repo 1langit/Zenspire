@@ -38,7 +38,8 @@ class RegisterActivity : AppCompatActivity() {
                 val password = edtPassword.text.toString()
                 val confirmPassword = edtConfirmPassword.text.toString()
                 if (validateRegister(email, firstName, password, confirmPassword)) {
-                    registerUser(email, firstName, lastName, password)
+//                    registerUser(email, firstName, lastName, password)
+                    stub()
                 }
             }
 
@@ -68,6 +69,7 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this@RegisterActivity, "Daftar sukses, silahkan masuk", Toast.LENGTH_SHORT).show()
                 val newIntent = Intent(this@RegisterActivity, LoginActivity::class.java)
                 startActivity(newIntent)
+                finish()
             }
 
             override fun onFailure(call: Call<Unit>, t: Throwable) {
@@ -97,5 +99,12 @@ class RegisterActivity : AppCompatActivity() {
 
             return email.isNotBlank() && firstName.isNotBlank() && password.isNotBlank() && password == confirmPassword
         }
+    }
+
+    private fun stub() {
+        Toast.makeText(this@RegisterActivity, "Daftar sukses, silahkan masuk", Toast.LENGTH_SHORT).show()
+        val newIntent = Intent(this@RegisterActivity, LoginActivity::class.java)
+        startActivity(newIntent)
+        finish()
     }
 }

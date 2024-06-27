@@ -49,7 +49,8 @@ class LoginActivity : AppCompatActivity() {
                 val email = edtEmail.text.toString()
                 val password = edtPassword.text.toString()
                 if (validateLogin(email, password)) {
-                    loginUser(email, password)
+//                    loginUser(email, password)
+                    stub()
                 }
             }
             btnRegister.setOnClickListener {
@@ -124,5 +125,20 @@ class LoginActivity : AppCompatActivity() {
 
             return email.isNotBlank() && password.isNotBlank()
         }
+    }
+
+    private fun stub() {
+        Toast.makeText(this@LoginActivity, "Berhasil masuk", Toast.LENGTH_SHORT).show()
+        prefManager.apply {
+            saveToken("temp")
+            saveUid(0)
+            saveEmail("zendaya@gmail.com")
+            saveFirstName("Zendaya")
+            saveLastName("Nia")
+        }
+        val newIntent = Intent(this@LoginActivity, DashboardActivity::class.java)
+        newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(newIntent)
+        finish()
     }
 }

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager2.widget.ViewPager2
 import com.genzen.zenspire.R
 import com.genzen.zenspire.databinding.FragmentCommunityBinding
 import com.genzen.zenspire.ui.common.TabAdapter
@@ -54,6 +55,7 @@ class CommunityFragment : Fragment() {
     }
 
     private fun showCategoryDialog() {
+        navigateToPage(2)
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Pilih Kategori")
             .setMultiChoiceItems(
@@ -67,5 +69,9 @@ class CommunityFragment : Fragment() {
             .setNegativeButton("Tutup") { dialog, which ->
                 dialog.dismiss()
             }.show()
+    }
+
+    fun navigateToPage(page: Int) {
+        binding.viewPager.setCurrentItem(page, true)
     }
 }

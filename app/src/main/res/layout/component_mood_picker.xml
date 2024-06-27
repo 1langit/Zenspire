@@ -116,6 +116,25 @@
             app:layout_constraintStart_toEndOf="@+id/btn_mood_bad"
             app:layout_constraintTop_toBottomOf="@+id/txt_mood" />
 
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/btn_mood_worse"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:backgroundTint="@color/black"-->
+<!--            android:drawableTop="@drawable/ic_mood_sangat_buruk"-->
+<!--            android:drawableTint="@color/white"-->
+<!--            android:paddingHorizontal="0dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="@string/angst_scale_5"-->
+<!--            app:cornerRadius="12dp"-->
+<!--            app:strokeColor="@color/secondary_red_400"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/btn_mood_bad"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/txt_mood" />-->
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

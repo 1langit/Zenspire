@@ -22,6 +22,23 @@
     <string name="rafael">Rafael Rafael Rafael Rafael Rafael Rafael Rafael Rafael</string>
 
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse imperdiet velit sed imperdiet aliquam. Vivamus eu mi quis lectus tincidunt hendrerit. Nullam lacinia posuere ante, id porttitor nulla vulputate ut. Pellentesque magna elit, scelerisque at ex vitae, pulvinar feugiat libero. Nam semper aliquet turpis quis aliquam. Mauris dignissim accumsan luctus. Donec in lorem arcu. Nullam et metus in nulla malesuada ultricies varius sit amet eros. Donec id sodales nunc. Vivamus at volutpat nisl, id sodales ex.</string>
+    <string name="chat_prompt">Sebagai ahli psikologi dengan metode CBT(Cognitive Behavioral Therapy), gunakan kata kamu untuk menggambarkan penulis, kamu akan melakukan terapi CBT dengan user, tetapi tidak semua user memiliki masalah mental jadi tidak boleh melakukan diagnosa terhadap user. lakukan chat dengan menjawab metode CBT, lalu jika user dirasa sudah sangat memerlukan ahli psikologi maka sarankan user untuk melanjutkan bersama ahli dengan menggunakan fitur chat psikolog.</string>
+    <string name="first_chat">Selamat datang di sesi terapi Cognitive Behavorial Therapy. Saya Zenia, konselor AI Anda untuk terapi Cognitive Behavioral. Jika ada yang ingin Anda ceritakan, jangan ragu untuk berbagi</string>
+
+    <string name="analysis">Berdasarkan jurnal harian kamu, terlihat jelas bahwa kamu sedang berada dalam suasana hati yang positif dan penuh rasa syukur. Kebahagiaanmu berasal dari kemampuanmu dalam membantu orang lain, terutama dalam hal coding. Rasa bangga dan syukur muncul karena kamu mampu memberikan dampak positif bagi orang di sekitarmu. Semangatmu untuk terus berkembang dan menjadi lebih baik setiap harinya juga sangat terasa.
+        \n
+        \n<u>Kegiatan yang perlu dilakukan</u>
+        \n
+        \n<b>Teruslah membantu orang lain:</b> Membantu orang lain terbukti memberikan kebahagiaan dan kepuasan bagi dirimu. Teruslah mencari kesempatan untuk berbagi ilmu dan kemampuan dengan orang di sekitarmu.
+        \n<b>Refleksi diri:</b> Luangkan waktu setiap hari untuk merefleksikan hal-hal yang kamu syukuri dan capai. Hal ini akan membantu menjaga semangat dan motivasi untuk terus berkembang.
+        \n<b>Tetapkan tujuan baru:</b> Semangatmu untuk menjadi lebih baik perlu didukung dengan tujuan yang jelas. Tentukan target-target baru yang ingin kamu capai, baik dalam hal coding maupun pengembangan diri.
+        \n
+        \n<u>Hal yang perlu dihindari‼️</u>
+        \n
+        \n<b>Membandingkan diri dengan orang lain:</b> Fokuslah pada perjalanan dan perkembangan dirimu sendiri. Membandingkan diri dengan orang lain hanya akan mengikis rasa percaya diri dan mengurangi kebahagiaanmu.
+        \n<b>Berpuas diri:</b> Meskipun kamu telah mencapai banyak hal, penting untuk terus belajar dan berkembang. Jangan biarkan rasa puas diri menghentikan langkahmu untuk menjadi lebih baik.
+        \nM<b>engabaikan kesehatan fisik dan mental:</b> Kebahagiaan dan semangat perlu didukung oleh kondisi fisik dan mental yang sehat. Pastikan kamu cukup tidur, makan makanan bergizi, dan meluangkan waktu untuk relaksasi.
+    </string>
 
     <string-array name="community_post_category">
         <item>Pengalaman</item>

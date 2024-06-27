@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                app:navigationIcon="@drawable/ic_back"
+                app:navigationIcon="@drawable/ic_arrow_left"
                 app:title="Detail Jurnal"
                 app:titleCentered="true"
                 app:titleTextAppearance="@style/font_heading6_semibold" />
