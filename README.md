@@ -54,7 +54,7 @@ https://github.com/1langit/Zenspire.git
 
 - **Firebase**: Firestore integration for real-time messaging, facilitating instant and synchronized messaging capabilities.
 
-## 📱Zenspire Application
+## 💻 Zenspire Application
 
 ### 🗄️Backend Application
 
