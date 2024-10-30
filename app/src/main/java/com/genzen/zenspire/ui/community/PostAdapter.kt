@@ -1,30 +1,35 @@
 package com.genzen.zenspire.ui.community
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.genzen.zenspire.R
-import com.genzen.zenspire.data.models.community.Post
-import com.genzen.zenspire.databinding.ComponentArticleBinding
+import com.genzen.zenspire.data.models.community.PostData
 import com.genzen.zenspire.databinding.ComponentCommunityBinding
 import com.google.android.material.chip.Chip
 
-class PostAdapter(private val onClick: (Post) -> Unit) : RecyclerView.Adapter<PostAdapter.ItemPostViewHolder>() {
+class PostAdapter(
+    private val context: Context,
+    private val onClick: (PostData) -> Unit
+) : RecyclerView.Adapter<PostAdapter.ItemPostViewHolder>() {
 
-    private val postList = ArrayList<Post>()
+    private val postList = ArrayList<PostData>()
 
     inner class ItemPostViewHolder(private val binding: ComponentCommunityBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(post: Post) {
+        fun bind(post: PostData) {
             with(binding) {
-                txtName.text = post.author
-                txtTimestamp.text = post.timestamp
+                txtName.text = "${post.user.first_name} ${post.user.last_name?: ' '}"
+                txtTimestamp.text = post.created_at
                 txtTitle.text = post.title
-                txtContent.text = post.content
-                btnLike.text = "${post.likesCount.toString()} suka"
-                btnComment.text = "${post.commentCount.toString()} komentar"
+                txtContent.text = post.body
+                txtLike.text = "${post._count.discussionLike} suka"
+                btnComment.text = "${post._count.comment} komentar"
+                if (post.isLiked) btnLike.background.setTint(ContextCompat.getColor(context, R.color.primary_blue_100))
 
                 chipCategory.removeAllViews()
-                post.categories.forEach {
+                post.category.forEach {
                     val chip = Chip(itemView.context, null, R.style.ChipCategory).apply {
                         text = it
                         setChipBackgroundColorResource(R.color.primary_blue_50)
@@ -52,7 +57,7 @@ class PostAdapter(private val onClick: (Post) -> Unit) : RecyclerView.Adapter<Po
         holder.bind(postList[position])
     }
 
-    fun setPosts(posts: List<Post>) {
+    fun setPosts(posts: List<PostData>) {
         postList.clear()
         postList.addAll(posts)
         notifyDataSetChanged()

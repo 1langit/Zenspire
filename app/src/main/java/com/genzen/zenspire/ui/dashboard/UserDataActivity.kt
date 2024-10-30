@@ -29,7 +29,6 @@ class UserDataActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityUserDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -58,8 +57,8 @@ class UserDataActivity : AppCompatActivity() {
             btnSave.setOnClickListener {
                 val birthDate = edtBirthDate.text.toString()
                 val genderRadioSelectedId = radioGroupGender.checkedRadioButtonId
-                val checkBoxes = listOf(checkAsthma, checkHeart, checkDiabetes, checkObesityMalnutrition, checkOther)
-                val healthCondition = checkBoxes.filter { it.isChecked }.map { it.text.toString() }
+                val checkBoxes = listOf(checkExperience, checkChallange, checkTherapy, checkMotivation, checkEducation, checkActivities, checkTips)
+                val preferences = checkBoxes.filter { it.isChecked }.map { it.text.toString() }
 
                 if (validateUserData(birthDate, genderRadioSelectedId)) {
                     val gender = when(findViewById<RadioButton>(genderRadioSelectedId).text.toString()) {
@@ -67,7 +66,7 @@ class UserDataActivity : AppCompatActivity() {
                         "Perempuan" -> "P"
                         else -> ""
                     }
-                    saveUserData(birthDate, gender, healthCondition)
+                    saveUserData(gender, birthDate, preferences)
                 }
             }
         }
@@ -85,13 +84,18 @@ class UserDataActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveUserData(birthDate: String, gender: String, healthCondition: List<String>) {
+    private fun saveUserData(gender: String, birthDate: String, preferences: List<String>) {
         val prefManager = PrefManager.getInstance(this@UserDataActivity)
-        val userDataRequest = UserDataRequest(birthDate, gender, healthCondition)
+        prefManager.apply {
+            saveGender(gender)
+            saveBirthdate(birthDate)
+            saveTopic(preferences.toSet())
+        }
+        val userDataRequest = UserDataRequest(gender, birthDate, preferences)
         val userDataCall = ApiClient.getApiInstance().postUserData("Bearer ${prefManager.getToken()}", userDataRequest)
         userDataCall.enqueue(object: Callback<Unit> {
             override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                Toast.makeText(this@UserDataActivity, "Data disimpan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@UserDataActivity, "JournalData disimpan", Toast.LENGTH_SHORT).show()
                 val newIntent = Intent(this@UserDataActivity, DashboardActivity::class.java)
                 startActivity(newIntent)
                 finish()

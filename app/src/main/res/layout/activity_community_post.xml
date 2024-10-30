@@ -8,36 +8,31 @@
     android:background="@color/white"
     tools:context=".ui.community.CommunityPostActivity">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_app_bar"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_left"
+        app:title="Unggahan"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/font_heading6_semibold" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:navigationIcon="@drawable/ic_arrow_left"
-            app:title="Unggahan"
-            app:titleCentered="true"
-            app:titleTextAppearance="@style/font_heading6_semibold" />
-
-    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_app_bar">
+        app:layout_constraintTop_toBottomOf="@+id/topAppBar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/img_profile"
@@ -98,7 +93,7 @@
                 style="@style/font_heading6_semibold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Bagaimana cara keluar dari circle yang toxic?"
                 app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +104,7 @@
                 style="@style/font_small_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="4dp"
                 android:justificationMode="inter_word"
                 android:text="@string/lorem"
@@ -123,6 +118,53 @@
                 android:layout_margin="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_content" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:backgroundTint="@color/white_black_50"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_like" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_like"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:minHeight="0dp"
+                android:padding="6dp"
+                android:drawableLeft="@drawable/ic_like"
+                android:textColor="@color/white_black_900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chip_category" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1,210 suka"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_like"
+                app:layout_constraintStart_toEndOf="@+id/btn_like"
+                app:layout_constraintTop_toTopOf="@+id/btn_like" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_comment"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:drawableLeft="@drawable/ic_comment"
+                android:minHeight="0dp"
+                android:text="120 komentar"
+                android:textColor="@color/white_black_900"
+                app:layout_constraintStart_toEndOf="@+id/txt_like"
+                app:layout_constraintTop_toTopOf="@+id/btn_like" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -10,6 +10,7 @@ import com.genzen.zenspire.R
 import com.genzen.zenspire.data.PrefManager
 import com.genzen.zenspire.ui.auth.LoginActivity
 import com.genzen.zenspire.databinding.FragmentProfileBinding
+import com.genzen.zenspire.ui.profile.ProfileEditActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ProfileFragment : Fragment() {
@@ -32,6 +33,16 @@ class ProfileFragment : Fragment() {
         with(binding) {
             txtName.text = "${prefManager.getFirstName()} ${prefManager.getLastName()}"
             txtEmail.text = prefManager.getEmail()
+
+            switchAnonymous.setOnCheckedChangeListener { _, isChecked ->
+                prefManager.setAnonymous(isChecked)
+            }
+
+            btnEdit.setOnClickListener {
+                val newIntent = Intent(requireContext(), ProfileEditActivity::class.java)
+                startActivity(newIntent)
+            }
+
             btnLogout.setOnClickListener {
                 showLogoutDialog(prefManager)
             }

@@ -38,7 +38,6 @@ class ChatActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -61,14 +60,14 @@ class ChatActivity : AppCompatActivity() {
         with(binding) {
             if (chatroom != null) {
                 initializeUserChat(chatroom)
-                toolbar.title = chatroom.users.find { it.id != prefManager.getUid().toString() }!!.name
-                toolbar.menu.findItem(R.id.end_chat).isVisible = false
+                topAppBar.title = chatroom.users.find { it.id != prefManager.getUid().toString() }!!.name
+                topAppBar.menu.findItem(R.id.end_chat).isVisible = false
             } else {
                 initializeChatbot()
-                toolbar.title = "Chat Zenia"
+                topAppBar.title = "Chat Zenia"
             }
 
-            toolbar.apply {
+            topAppBar.apply {
                 setNavigationOnClickListener {
                     finish()
                 }
@@ -103,7 +102,7 @@ class ChatActivity : AppCompatActivity() {
 
     private fun initializeChatbot() {
         val generativeModel = GenerativeModel(
-            apiKey = BuildConfig.API_KEY,
+            apiKey = BuildConfig.GEMINI_API_KEY,
             modelName = "gemini-1.5-flash",
         )
 

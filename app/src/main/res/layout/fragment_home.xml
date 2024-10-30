@@ -49,20 +49,6 @@
 <!--            app:layout_constraintEnd_toEndOf="parent"-->
 <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/img_bg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="-1dp"
-            android:translationY="24dp"
-            android:rotation="180"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_circle"
-            app:layout_constraintBottom_toTopOf="@+id/card_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:tint="@color/primary_blue_25" />
-
         <include
             android:id="@+id/card_mood"
             layout="@layout/component_mood_picker"
@@ -73,6 +59,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_name" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="-1dp"
+            android:rotation="180"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/card_mood"
+            app:tint="@color/primary_blue_25" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_content"
@@ -87,7 +86,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_default">
+                android:paddingHorizontal="@dimen/margin_default"
+                android:paddingVertical="20dp">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_chatbot"

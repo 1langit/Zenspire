@@ -7,23 +7,17 @@
     android:background="@color/white"
     tools:context=".ui.dashboard.ProfileFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/appBarLayout"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:title="Profil"
+        app:titleTextAppearance="@style/font_heading6_semibold" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:title="Profil"
-            app:titleTextAppearance="@style/font_heading6_semibold" />
-
-    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/img_profile"
@@ -36,7 +30,7 @@
         android:src="@drawable/ic_user"
         app:contentPadding="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintTop_toBottomOf="@+id/topAppBar"
         app:shapeAppearance="@style/CircularShapeAppearance" />
 
     <View

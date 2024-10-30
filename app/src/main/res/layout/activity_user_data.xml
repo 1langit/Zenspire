@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_blue_25"
     tools:context=".ui.dashboard.UserDataActivity">
 
     <com.google.android.material.textview.MaterialTextView
@@ -13,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_default"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="Data Diri"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +35,7 @@
         style="@style/Widget.Material3.CardView.Filled"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,14 +46,14 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/margin_default">
+            android:paddingHorizontal="@dimen/margin_default">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_gender"
                 style="@style/font_paragraph_semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="20dp"
                 android:text="Apa jenis kelamin kamu?"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -126,55 +127,73 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Apakah ada diagnosis kondisi kesehatan?"
+                android:text="Pilih topik yang kamu sukai"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/input_birth_date" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/check_asthma"
+                android:id="@+id/check_experience"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:minHeight="40dp"
-                android:text="Asma"
+                android:text="Pengalaman"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_health_condition" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/check_heart"
+                android:id="@+id/check_challange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="40dp"
-                android:text="Penyakit jantung"
+                android:text="Tantangan Keseharian"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/check_asthma" />
+                app:layout_constraintTop_toBottomOf="@+id/check_experience" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/check_diabetes"
+                android:id="@+id/check_therapy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="40dp"
-                android:text="Diabetes"
+                android:text="Terapi dan Perawatan"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/check_heart" />
+                app:layout_constraintTop_toBottomOf="@+id/check_challange" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/check_obesity_malnutrition"
+                android:id="@+id/check_motivation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="40dp"
-                android:text="Obesitas / malnutrisi"
+                android:text="Motivasi dan Nasihat"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/check_diabetes" />
+                app:layout_constraintTop_toBottomOf="@+id/check_therapy" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/check_other"
+                android:id="@+id/check_education"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="40dp"
-                android:text="Lainnya"
+                android:text="Edukasi"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/check_obesity_malnutrition" />
+                app:layout_constraintTop_toBottomOf="@+id/check_motivation" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/check_activities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:text="Acara dan Aktivitas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check_education" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/check_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:text="Tips dan Strategi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check_activities" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_skip"
@@ -182,11 +201,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
+                android:layout_marginTop="12dp"
                 android:text="Lewati"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btn_save"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check_tips" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_save"
@@ -194,10 +214,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="Simpan"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btn_skip" />
+                app:layout_constraintStart_toEndOf="@+id/btn_skip"
+                app:layout_constraintTop_toTopOf="@+id/btn_skip" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

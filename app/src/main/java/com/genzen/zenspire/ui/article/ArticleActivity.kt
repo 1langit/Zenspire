@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.genzen.zenspire.R
 import com.genzen.zenspire.databinding.ActivityArticleBinding
@@ -21,10 +22,10 @@ class ArticleActivity : AppCompatActivity() {
         newIntent.putExtra("ARTICLE", article)
         startActivity(newIntent)
     }
+    private var selectedCategories: MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityArticleBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -36,6 +37,10 @@ class ArticleActivity : AppCompatActivity() {
         with(binding) {
             topAppBar.setNavigationOnClickListener {
                 finish()
+            }
+
+            edtSearch.addTextChangedListener { query ->
+                articleViewModel.filterAndSearchArticles(query.toString(), selectedCategories)
             }
 
             btnFilter.setOnClickListener {
@@ -54,16 +59,31 @@ class ArticleActivity : AppCompatActivity() {
     }
 
     private fun showCategoryDialog() {
+        val categories = resources.getStringArray(R.array.community_post_category)
+        val selectedItems = BooleanArray(categories.size) { index ->
+            selectedCategories.contains(categories[index])
+        }
+
         MaterialAlertDialogBuilder(this)
             .setTitle("Pilih Kategori")
-            .setMultiChoiceItems(
-                resources.getStringArray(R.array.community_post_category
-                ), null) { dialog, which, isChecked ->
-
-            }.setPositiveButton("Pilih") { dialog, which ->
+            .setMultiChoiceItems(categories, selectedItems) { _, which, isChecked ->
+                selectedItems[which] = isChecked
+            }.setPositiveButton("Pilih") { dialog, _ ->
+                selectedCategories.clear()
+                categories.forEachIndexed { index, category ->
+                    if (selectedItems[index]) {
+                        selectedCategories.add(category)
+                    }
+                }
+                articleViewModel.filterAndSearchArticles(binding.edtSearch.text.toString(), selectedCategories)
                 dialog.dismiss()
-            }.setNegativeButton("Tutup") { dialog, which ->
+            }.setNegativeButton("Tutup") { dialog, _ ->
                 dialog.dismiss()
             }.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        articleViewModel.filterAndSearchArticles("", listOf())
     }
 }

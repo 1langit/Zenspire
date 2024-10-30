@@ -5,25 +5,25 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.genzen.zenspire.R
-import com.genzen.zenspire.data.models.journal.Journal
+import com.genzen.zenspire.data.models.journal.JournalData
 import com.genzen.zenspire.databinding.ComponentJournalBinding
 
 class JournalAdapter(
     private val context: Context,
-    private val onClick: (Journal) -> Unit
+    private val onClick: (JournalData) -> Unit
 ) : RecyclerView.Adapter<JournalAdapter.ItemJournalViewHolder>() {
 
-    private val journalList = ArrayList<Journal>()
+    private val journalList = ArrayList<JournalData>()
 
     inner class ItemJournalViewHolder(private val binding: ComponentJournalBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(journal: Journal) {
+        fun bind(journal: JournalData) {
             with(binding) {
                 txtTitle.text = journal.title
-                txtMood.text = journal.mood
+                txtMood.text = journal.mood.replaceFirstChar { it.uppercase() }
                 txtDateTime.text = journal.created_at
 
                 imgMood.setImageResource(
-                    when (journal.mood) {
+                    when (journal.mood.replaceFirstChar { it.uppercase() }) {
                         context.getString(R.string.angst_scale_1) -> R.drawable.ic_mood_sangat_baik
                         context.getString(R.string.angst_scale_2) -> R.drawable.ic_mood_baik
                         context.getString(R.string.angst_scale_3) -> R.drawable.ic_mood_biasa
@@ -53,7 +53,7 @@ class JournalAdapter(
         holder.bind(journalList[position])
     }
 
-    fun setJournals(journals: List<Journal>) {
+    fun setJournals(journals: List<JournalData>) {
         journalList.clear()
         journalList.addAll(journals)
         notifyDataSetChanged()

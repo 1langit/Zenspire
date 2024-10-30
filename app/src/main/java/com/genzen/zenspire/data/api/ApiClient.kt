@@ -7,8 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
     private val okHttpClient = buildOkHttpClient()
-    private const val BASE_URL = "http://10.0.2.2:3000"
-//    private const val BASE_URL = "http://34.101.186.212:3000"
+//    private const val BASE_URL = "http://10.0.2.2:3000"
+    private const val BASE_URL = "https://zenspire-f5ec6.et.r.appspot.com"
 
     fun getApiInstance(): ApiService {
         val builder = Retrofit.Builder().baseUrl("$BASE_URL/api/")

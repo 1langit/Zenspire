@@ -14,7 +14,6 @@ class QuestionnaireActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuestionnaireBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityQuestionnaireBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

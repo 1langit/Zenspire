@@ -108,32 +108,42 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_like"
-            style="@style/Widget.Material3.Button.TextButton"
+            style="@style/Widget.Material3.Button.IconButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:minHeight="0dp"
+            android:padding="6dp"
             android:clickable="false"
             android:drawableLeft="@drawable/ic_like"
-            android:text="1,210 suka"
             android:textColor="@color/white_black_900"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chip_category"
             app:rippleColor="@color/transparent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1,210 suka"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_like"
+            app:layout_constraintStart_toEndOf="@+id/btn_like"
+            app:layout_constraintTop_toTopOf="@+id/btn_like" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_comment"
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="0dp"
+            android:layout_marginStart="4dp"
             android:clickable="false"
             android:drawableLeft="@drawable/ic_comment"
+            android:minHeight="0dp"
             android:text="120 komentar"
             android:textColor="@color/white_black_900"
-            app:rippleColor="@color/transparent"
-            app:layout_constraintStart_toEndOf="@+id/btn_like"
-            app:layout_constraintTop_toTopOf="@+id/btn_like" />
+            app:layout_constraintStart_toEndOf="@+id/txt_like"
+            app:layout_constraintTop_toTopOf="@+id/btn_like"
+            app:rippleColor="@color/transparent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

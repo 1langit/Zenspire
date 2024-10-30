@@ -5,7 +5,7 @@ import com.genzen.zenspire.data.models.community.Post
 
 class CommunitySeed {
 
-    val posts = listOf(
+    private val posts = listOf(
         Post(
             "1",
             "Mengatasi Kecemasan Sosial di Kampus",

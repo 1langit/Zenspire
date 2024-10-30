@@ -4,15 +4,15 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Journal(
-    val id: Int,
-    val user_id: Int,
+data class JournalData(
+    val id: Int? = null,
+    val user_id: Int? = null,
     val title: String,
     val mood: String,
     val question_1: String,
     val question_2: String,
     val question_3: String,
     val question_4: String,
-    val created_at: String,
-    val updated_at: String
+    val created_at: String? = null,
+    val updated_at: String? = null
 ): Parcelable

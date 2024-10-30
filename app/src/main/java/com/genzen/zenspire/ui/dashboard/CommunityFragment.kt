@@ -1,21 +1,16 @@
 package com.genzen.zenspire.ui.dashboard
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.viewpager2.widget.ViewPager2
+import androidx.fragment.app.Fragment
 import com.genzen.zenspire.R
 import com.genzen.zenspire.databinding.FragmentCommunityBinding
 import com.genzen.zenspire.ui.common.TabAdapter
 import com.genzen.zenspire.ui.community.CommunityHomeFragment
 import com.genzen.zenspire.ui.community.CommunityLikeFragment
 import com.genzen.zenspire.ui.community.CommunityMyPostFragment
-import com.genzen.zenspire.ui.journal.JournalAddActivity
-import com.genzen.zenspire.ui.journal.JournalListFragment
-import com.genzen.zenspire.ui.journal.JournalStatisticFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -55,7 +50,7 @@ class CommunityFragment : Fragment() {
     }
 
     private fun showCategoryDialog() {
-        navigateToPage(2)
+
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Pilih Kategori")
             .setMultiChoiceItems(

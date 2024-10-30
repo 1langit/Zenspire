@@ -21,7 +21,6 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -29,6 +28,7 @@ class RegisterActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        window.statusBarColor = getColor(R.color.primary_blue_50)
 
         with(binding) {
             btnRegister.setOnClickListener {
@@ -38,8 +38,8 @@ class RegisterActivity : AppCompatActivity() {
                 val password = edtPassword.text.toString()
                 val confirmPassword = edtConfirmPassword.text.toString()
                 if (validateRegister(email, firstName, password, confirmPassword)) {
-//                    registerUser(email, firstName, lastName, password)
-                    stub()
+                    registerUser(email, firstName, lastName, password)
+//                    stub()
                 }
             }
 

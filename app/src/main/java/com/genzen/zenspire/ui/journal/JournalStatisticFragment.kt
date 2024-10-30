@@ -1,19 +1,18 @@
 package com.genzen.zenspire.ui.journal
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.genzen.zenspire.R
 import com.genzen.zenspire.databinding.FragmentJournalStatisticBinding
 
 class JournalStatisticFragment : Fragment() {
 
     private lateinit var binding: FragmentJournalStatisticBinding
-    private val journalViewModel: JournalViewModel by viewModels()
+    private val journalViewModel by activityViewModels<JournalViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,11 +31,11 @@ class JournalStatisticFragment : Fragment() {
 
             journalViewModel.journals.observe(viewLifecycleOwner) { journals ->
                 val points = listOf(
-                    journals.count { it.mood == getString(R.string.angst_scale_1) },
-                    journals.count { it.mood == getString(R.string.angst_scale_2) },
-                    journals.count { it.mood == getString(R.string.angst_scale_3) },
-                    journals.count { it.mood == getString(R.string.angst_scale_4) },
-                    journals.count { it.mood == getString(R.string.angst_scale_5) },
+                    journals.count { it.mood.replaceFirstChar { it.uppercase() } == getString(R.string.angst_scale_1) },
+                    journals.count { it.mood.replaceFirstChar { it.uppercase() } == getString(R.string.angst_scale_2) },
+                    journals.count { it.mood.replaceFirstChar { it.uppercase() } == getString(R.string.angst_scale_3) },
+                    journals.count { it.mood.replaceFirstChar { it.uppercase() } == getString(R.string.angst_scale_4) },
+                    journals.count { it.mood.replaceFirstChar { it.uppercase() } == getString(R.string.angst_scale_5) }
                 )
 
                 moodBadges.forEach {

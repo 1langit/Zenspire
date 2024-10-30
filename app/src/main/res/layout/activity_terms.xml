@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.TermsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_heading6_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Syarat dan Ketentuan"
+            android:textColor="@color/primary_navy_100" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_paragraph_semibold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Penggunaan Data"
+            android:textColor="@color/primary_blue_700" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_small_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/term_data_usage" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_paragraph_semibold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Kerahasiaan dan Keamanan Data"
+            android:textColor="@color/primary_blue_700" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_small_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/term_data_security" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_paragraph_semibold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Persetujuan Penggunaan Data"
+            android:textColor="@color/primary_blue_700" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_small_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/term_data_usage_agreement" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_paragraph_semibold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Hak Pengguna"
+            android:textColor="@color/primary_blue_700" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_small_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/term_user_rights" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/font_small_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/terms_agreement" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/check_terms"
+            style="@style/font_small_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/terms_check" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingVertical="12dp"
+            android:enabled="false"
+            android:text="Lanjutkan" />
+
+    </LinearLayout>
+
+</ScrollView>

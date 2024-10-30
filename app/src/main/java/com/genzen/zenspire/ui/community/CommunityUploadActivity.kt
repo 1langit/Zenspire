@@ -1,14 +1,14 @@
 package com.genzen.zenspire.ui.community
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.genzen.zenspire.R
 import com.genzen.zenspire.data.PrefManager
-import com.genzen.zenspire.data.models.community.Post
+import com.genzen.zenspire.data.models.community.PostUpload
 import com.genzen.zenspire.databinding.ActivityCommunityUploadBinding
 import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -22,7 +22,6 @@ class CommunityUploadActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityCommunityUploadBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -32,6 +31,7 @@ class CommunityUploadActivity : AppCompatActivity() {
         }
 
         val prefManager = PrefManager.getInstance(this@CommunityUploadActivity)
+        communityViewModel.setToken(prefManager.getToken())
         categories = resources.getStringArray(R.array.community_post_category)
 
         with(binding) {
@@ -59,17 +59,10 @@ class CommunityUploadActivity : AppCompatActivity() {
 
                 if (title.isNotBlank() && content.isNotBlank()) {
                     communityViewModel.uploadPost(
-                        Post(
-                            "0",
-                            title,
-                            "${prefManager.getFirstName()} ${prefManager.getLastName()}",
-                            "Baru saja",
-                            listOf(),
-                            0,
-                            0,
-                            content
-                        )
+                        PostUpload(title, content, fixedCategories, null)
                     )
+                    Toast.makeText(this@CommunityUploadActivity, "Postingan diunggah", Toast.LENGTH_SHORT).show()
+                    setResult(RESULT_FIRST_USER)
                     finish()
                 }
             }

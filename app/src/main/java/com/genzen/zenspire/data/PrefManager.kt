@@ -15,7 +15,9 @@ class PrefManager private constructor(context: Context) {
         private const val KEY_EMAIL = "email"
         private const val KEY_FIRSTNAME = "firstname"
         private const val KEY_LASTNAME = "lastname"
-        private const val KEY_EXP = "exp"
+        private const val KEY_GENDER = "gender"
+        private const val KEY_BIRTHDATE = "birthdate"
+        private const val KEY_TOPIC = "topic"
         private const val KEY_ISANONYMOUS = "isAnonymous"
 
         @Volatile
@@ -45,8 +47,14 @@ class PrefManager private constructor(context: Context) {
     fun saveLastName(lastName: String?) {
         sharedPreferences.edit().putString(KEY_LASTNAME, lastName).apply()
     }
-    fun saveExp(exp: Int) {
-        sharedPreferences.edit().putInt(KEY_EXP, exp).apply()
+    fun saveGender(gender: String) {
+        sharedPreferences.edit().putString(KEY_GENDER, gender).apply()
+    }
+    fun saveBirthdate(birthdate: String) {
+        sharedPreferences.edit().putString(KEY_BIRTHDATE, birthdate).apply()
+    }
+    fun saveTopic(topic: Set<String>) {
+        sharedPreferences.edit().putStringSet(KEY_BIRTHDATE, topic).apply()
     }
     fun setAnonymous(isAnonymous: Boolean) {
         sharedPreferences.edit().putBoolean(KEY_ISANONYMOUS, isAnonymous).apply()
@@ -60,16 +68,22 @@ class PrefManager private constructor(context: Context) {
         return sharedPreferences.getInt(KEY_UID, 0)
     }
     fun getEmail(): String {
-        return sharedPreferences.getString(KEY_EMAIL, "zendaya@gmail.com") ?: ""
+        return sharedPreferences.getString(KEY_EMAIL, "") ?: ""
     }
     fun getFirstName(): String {
-        return sharedPreferences.getString(KEY_FIRSTNAME, "Zendaya") ?: ""
+        return sharedPreferences.getString(KEY_FIRSTNAME, "") ?: ""
     }
     fun getLastName(): String {
-        return sharedPreferences.getString(KEY_LASTNAME, "Nia") ?: ""
+        return sharedPreferences.getString(KEY_LASTNAME, "") ?: ""
     }
-    fun getExp(): Int {
-        return sharedPreferences.getInt(KEY_EXP, 0)
+    fun getGender(): String {
+        return sharedPreferences.getString(KEY_GENDER, "") ?: ""
+    }
+    fun getBirthdate(): String {
+        return sharedPreferences.getString(KEY_BIRTHDATE, "") ?: ""
+    }
+    fun getTopic(): MutableSet<String>? {
+        return sharedPreferences.getStringSet(KEY_TOPIC, emptySet())
     }
     fun isAnonymous(): Boolean {
         return sharedPreferences.getBoolean(KEY_ISANONYMOUS, false)

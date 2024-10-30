@@ -3,7 +3,6 @@ package com.genzen.zenspire.ui.auth
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -28,7 +27,6 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -36,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        window.statusBarColor = getColor(R.color.primary_blue_50)
 
         prefManager = PrefManager.getInstance(this)
         if (prefManager.getToken().isNotBlank()) {
@@ -49,8 +48,8 @@ class LoginActivity : AppCompatActivity() {
                 val email = edtEmail.text.toString()
                 val password = edtPassword.text.toString()
                 if (validateLogin(email, password)) {
-//                    loginUser(email, password)
-                    stub()
+                    loginUser(email, password)
+//                    stub()
                 }
             }
             btnRegister.setOnClickListener {
@@ -74,7 +73,6 @@ class LoginActivity : AppCompatActivity() {
                         saveEmail(data.email)
                         saveFirstName(data.first_name)
                         saveLastName(data.last_name)
-                        saveExp(data.experience_points)
                     }
                     Toast.makeText(this@LoginActivity, "Berhasil masuk", Toast.LENGTH_SHORT).show()
                     redirectUser()
@@ -104,6 +102,13 @@ class LoginActivity : AppCompatActivity() {
                 )
                 newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(newIntent)
+                response.body()?.let { res ->
+                    prefManager.apply {
+                        saveGender(res.data.gender)
+                        saveBirthdate(res.data.birthday)
+                        saveTopic(res.data.preferences.toSet())
+                    }
+                }
             }
 
             override fun onFailure(call: Call<UserDataResponse>, t: Throwable) {
